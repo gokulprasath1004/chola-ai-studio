@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gokulprasath1004.github.io/chola-ai-studio/sitemap.xml
