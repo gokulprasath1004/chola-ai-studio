@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chola AI Studio</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#07111f;
+ color:white;
+}
+header{
+ padding:22px;
+ text-align:center;
+ background:#101e32;
+ border-bottom:2px solid #d6a947;
+}
+h1{color:#e9bd58;margin:0}
+main{max-width:650px;margin:30px auto;padding:20px}
+.card{
+ background:#12243b;
+ padding:22px;
+ border-radius:16px;
+ border:1px solid #344760;
+}
+label{display:block;margin-top:18px}
+textarea,select,input{
+ width:100%;
+ padding:13px;
+ margin-top:8px;
+ border-radius:9px;
+ border:1px solid #52647b;
+ background:#081525;
+ color:white;
+}
+button{
+ width:100%;
+ padding:15px;
+ margin-top:20px;
+ border:0;
+ border-radius:9px;
+ background:#d6a947;
+ color:#101827;
+ font-weight:bold;
+ font-size:16px;
+}
+#preview{
+ margin-top:20px;
+ padding:20px;
+ background:#081525;
+ border-radius:10px;
+ min-height:80px;
+}
+small{color:#b8c5d6}
+</style>
+</head>
+<body>
+<header>
+<h1>⚔ CHOLA AI STUDIO</h1>
+<p>தமிழ் AI வீடியோ உருவாக்கும் தளம்</p>
+</header>
+
+<main>
+<div class="card">
+<h2>AI Video Generator</h2>
+
+<label>உங்கள் வீடியோவின் கதை / Prompt</label>
+<textarea id="prompt" rows="5"
+placeholder="உங்கள் வீடியோ எப்படி இருக்க வேண்டும் என்று எழுதுங்கள்..."></textarea>
+
+<label>Video Duration</label>
+<select id="duration">
+<option>5 Seconds</option>
+<option>10 Seconds</option>
+<option>30 Seconds</option>
+<option>60 Seconds</option>
+</select>
+
+<label>Video Quality</label>
+<select id="quality">
+<option>HD</option>
+<option>Full HD</option>
+</select>
+
+<label>Aspect Ratio</label>
+<select id="ratio">
+<option>16:9</option>
+<option>9:16</option>
+<option>1:1</option>
+</select>
+
+<button onclick="generate()">Create Video Prompt</button>
+
+<div id="preview">
+<small>உங்கள் Prompt இங்கே தோன்றும்.</small>
+</div>
+
+<button onclick="copyPrompt()">Copy Prompt</button>
+<p><small>குறிப்பு: இது தற்போது Prompt உருவாக்கும் Demo மட்டுமே. உண்மையான AI வீடியோ உருவாக்க API இன்னும் இணைக்கப்படவில்லை.</small></p>
+</div>
+</main>
+
+<script>
+function generate(){
+ const p=document.getElementById("prompt").value;
+ const d=document.getElementById("duration").value;
+ const q=document.getElementById("quality").value;
+ const r=document.getElementById("ratio").value;
+
+ if(!p.trim()){
+  alert("முதலில் உங்கள் கதையை எழுதுங்கள்!");
+  return;
+ }
+
+ document.getElementById("preview").innerText=
+ "Video Prompt:\n"+p+
+ "\nDuration: "+d+
+ "\nQuality: "+q+
+ "\nRatio: "+r;
+}
+
+function copyPrompt(){
+ const text=document.getElementById("preview").innerText;
+ if(navigator.clipboard){
+  navigator.clipboard.writeText(text)
+  .then(()=>alert("Prompt copied!"));
+ }
+}
+</script>
+</body>
+</html>
