@@ -3,555 +3,177 @@
 <html lang="ta">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="mBmf081ZrmxPuzw0sDuuUInk4WrnfD17z_mYzORMfBs">
-<meta name="description" content="CHOLA AI STUDIO - Tamil AI Video Generator, Story Maker and Creative Prompt Studio.">
-<meta name="theme-color" content="#080d19">
-<title>CHOLA AI STUDIO | Royal AI Creator</title>
-
+<meta name="description" content="CHOLA AI STUDIO — தமிழ் படைப்பாளர்களுக்கான AI Creative Studio.">
+<meta name="theme-color" content="#080b13">
+<title>CHOLA AI STUDIO | தமிழ் படைப்புலகம்</title>
 <style>
-:root {
-  --bg:#080d19;
-  --panel:#111b30;
-  --gold:#e7b83f;
-  --gold2:#ffdf83;
-  --white:#fff;
-  --muted:#bdc5d3;
-}
-
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html { scroll-behavior:smooth; }
-
-body {
-  font-family:Arial,sans-serif;
-  background-image:
-  linear-gradient(
-    rgba(5, 8, 18, 0.65),
-    rgba(5, 8, 18, 0.78)
-  ),
-  url("https://upload.wikimedia.org/wikipedia/commons/c/cc/Brihadeeswarar_Temple_thanjavur.jpg");
-
-background-size: cover;
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: scroll;
-}
-  
-}
-
-header {
-  text-align:center;
-  padding:28px 15px;
-  background:linear-gradient(135deg,#172746,#080d19);
-  border-bottom:2px solid var(--gold);
-}
-
-.logo {
-  font-size:30px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--gold2);
-  text-shadow:0 0 20px #d5a52b88;
-}
-
-.logo-icon {
-  display:block;
-  font-size:42px;
-}
-
-.tagline {
-  color:#e6d6ad;
-  margin-top:5px;
-}
-
-nav {
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#0c1425f5;
-  border-bottom:1px solid #d5a52b66;
-  padding:12px 5px;
-  text-align:center;
-}
-
-nav a {
-  color:var(--gold2);
-  text-decoration:none;
-  display:inline-block;
-  margin:5px 9px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-nav a:hover { color:white; }
-
-.hero {
-  text-align:center;
-  padding:85px 18px;
-  background:
-    radial-gradient(ellipse at top,#76531c55,transparent 65%),
-    linear-gradient(145deg,#172746,#080d19);
-}
-
-.hero-label {
-  display:inline-block;
-  border:1px solid var(--gold);
-  color:var(--gold2);
-  border-radius:30px;
-  padding:5px 16px;
-  font-size:12px;
-  letter-spacing:2px;
-  margin-bottom:20px;
-}
-
-.hero h1 {
-  font-size:clamp(30px,6vw,52px);
-  line-height:1.3;
-  color:var(--gold2);
-  margin-bottom:15px;
-  text-shadow:0 0 20px #d5a52b55;
-}
-
-.hero p {
-  max-width:650px;
-  margin:0 auto 25px;
-  color:#d0d7e3;
-}
-
-.gold-btn {
-  display:inline-block;
-  background:linear-gradient(135deg,#ffe39a,#d69b24);
-  color:#15100a;
-  padding:12px 25px;
-  border-radius:8px;
-  font-weight:bold;
-  text-decoration:none;
-  border:none;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.gold-btn:hover {
-  transform:translateY(-3px);
-  box-shadow:0 8px 25px #d5a52b55;
-}
-
-main {
-  width:100%;
-  max-width:1050px;
-  margin:auto;
-  padding:22px;
-}
-
-.section-title {
-  text-align:center;
-  margin-bottom:22px;
-}
-
-.section-title h2 {
-  color:var(--gold2);
-  font-size:25px;
-}
-
-.section-title p {
-  color:var(--muted);
-  font-size:14px;
-}
-
-.card {
-  background:linear-gradient(145deg,#17243c,#0e1729);
-  border:1px solid #d5a52b55;
-  border-radius:15px;
-  padding:25px;
-  margin:25px 0;
-  box-shadow:0 8px 30px #0005;
-  transition:.3s;
-}
-
-.card:hover {
-  border-color:var(--gold);
-  box-shadow:0 10px 35px #d5a52b18;
-}
-
-.card h2 {
-  color:var(--gold2);
-  margin-bottom:12px;
-  font-size:23px;
-}
-
-.card p {
-  color:#d1d7e1;
-  margin-bottom:12px;
-}
-
-input, textarea {
-  width:100%;
-  padding:14px;
-  margin:12px 0;
-  background:#080d19;
-  color:white;
-  border:1px solid #68748a;
-  border-radius:8px;
-  font-size:16px;
-  outline:none;
-}
-
-input:focus, textarea:focus {
-  border-color:var(--gold);
-  box-shadow:0 0 10px #d5a52b33;
-}
-
-button {
-  font-size:14px;
-}
-
-.result {
-  background:#080d19;
-  border:1px solid #b78b35;
-  border-radius:10px;
-  padding:17px;
-  margin:15px 0;
-  min-height:65px;
-  white-space:pre-wrap;
-  overflow-wrap:anywhere;
-  color:#fff;
-}
-
-.feature-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-  margin:25px 0;
-}
-
-.feature {
-  background:linear-gradient(145deg,#1b2a46,#10192b);
-  border:1px solid #d5a52b55;
-  border-radius:13px;
-  padding:22px;
-  text-align:center;
-  transition:.3s;
-}
-
-.feature:hover {
-  transform:translateY(-5px);
-  border-color:var(--gold);
-}
-
-.feature .icon {
-  font-size:35px;
-}
-
-.feature h3 {
-  color:var(--gold2);
-  margin:8px 0;
-}
-
-.feature p {
-  color:var(--muted);
-  font-size:14px;
-}
-
-.video-frame {
-  width:100%;
-  height:470px;
-  border:1px solid var(--gold);
-  border-radius:10px;
-  background:#080d19;
-}
-
-.info-link {
-  color:var(--gold2);
-  text-decoration:underline;
-}
-
-footer {
-  text-align:center;
-  padding:35px 15px;
-  background:linear-gradient(135deg,#172746,#080d19);
-  border-top:2px solid var(--gold);
-}
-
-footer p {
-  color:var(--muted);
-  margin:7px;
-}
-
-footer a {
-  color:var(--gold2);
-  text-decoration:none;
-  margin:8px;
-  display:inline-block;
-}
-
-@media(max-width:600px) {
-  .logo { font-size:23px; }
-  .hero { padding:60px 15px; }
-  main { padding:12px; }
-  .card { padding:18px; }
-  .video-frame { height:350px; }
-  nav a { margin:4px 6px; }
-}
+:root{--gold:#f3c969;--gold2:#ffe7a6;--ink:#080b13;--panel:rgba(12,17,29,.86);--muted:#d2d4dc}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{font-family:system-ui,"Noto Sans Tamil",Arial,sans-serif;background:#080b13 url("assets/brihadeeswarar-bg.png") center top/cover fixed no-repeat;color:#fff;line-height:1.75}
+body:before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(4,7,14,.55),rgba(4,7,14,.82) 45%,rgba(4,7,14,.94));z-index:-1}
+a{color:inherit}
+header{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 65px;background:linear-gradient(180deg,rgba(4,7,14,.15),rgba(4,7,14,.58))}
+.eyebrow{color:var(--gold2);letter-spacing:3px;font-size:.78rem;font-weight:800}
+.logo{font-size:clamp(2.4rem,8vw,5rem);line-height:1.12;font-weight:950;letter-spacing:2px;color:var(--gold2);text-shadow:0 4px 28px #000}
+header h1{font-size:clamp(1.45rem,4vw,2.6rem);margin:18px 0 10px}
+header p{max-width:680px;color:#f0e9d9}
+.gold{display:inline-block;margin-top:25px;padding:12px 24px;border-radius:999px;background:linear-gradient(135deg,#ffe7a6,#c58a24);color:#1a1306;text-decoration:none;font-weight:900;box-shadow:0 8px 28px #0008}
+nav{position:sticky;top:0;z-index:10;display:flex;gap:8px;overflow-x:auto;white-space:nowrap;padding:11px 14px;background:rgba(5,9,17,.92);backdrop-filter:blur(14px);border-block:1px solid #d5a52b66}
+nav a{font-size:.88rem;text-decoration:none;color:var(--gold2);padding:7px 12px;border:1px solid #d6ad5540;border-radius:999px}
+main{width:min(100%,1000px);margin:auto;padding:18px 16px 60px}
+section{scroll-snap-align:start;margin:24px 0;padding:clamp(20px,4vw,34px);border:1px solid #e1b95566;border-radius:24px;background:linear-gradient(145deg,rgba(18,27,44,.91),rgba(7,11,20,.94));box-shadow:0 18px 50px #0008;backdrop-filter:blur(8px)}
+.section-head{text-align:center;margin-bottom:22px}
+.kicker{color:var(--gold);font-size:.76rem;font-weight:900;letter-spacing:2px}
+h2{font-size:clamp(1.45rem,4vw,2rem);color:var(--gold2);line-height:1.35}
+.section-head p,.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.tile{padding:20px;border:1px solid #e2b95755;border-radius:18px;background:#ffffff0b}
+.tile .ico{font-size:2rem}.tile h3{color:var(--gold2);margin:7px 0}
+label{display:block;color:var(--gold2);font-weight:700;margin-top:12px}
+input,textarea{width:100%;padding:14px;margin:7px 0 12px;background:#080d19;color:white;border:1px solid #8a7449;border-radius:12px;font:inherit}
+textarea{min-height:120px;resize:vertical}
+button{border:0;border-radius:999px;padding:12px 20px;background:linear-gradient(135deg,#ffe7a6,#c58a24);color:#1a1306;font-weight:900;font:inherit;cursor:pointer}
+button:active{transform:scale(.98)}
+.output{white-space:pre-wrap;overflow-wrap:anywhere;background:#050811;border:1px solid #b58d43;border-radius:13px;padding:16px;margin-top:14px;min-height:55px;color:#fff}
+.video{width:100%;height:min(65vh,520px);border:1px solid var(--gold);border-radius:16px;background:#050811}
+.notice{font-size:.9rem;color:#e8dcbf;margin-top:12px}
+footer{text-align:center;padding:35px 15px 55px;background:#050811eF;border-top:1px solid #d5a52b66;color:var(--muted)}
+footer strong{color:var(--gold2)}
+@media(max-width:600px){body{background-attachment:scroll}header{min-height:78vh;padding-top:70px}main{padding:10px}section{margin:16px 0;padding:19px;border-radius:19px}.video{height:420px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
-
 <body>
-
 <header id="home">
-  <span class="logo-icon">⚔️</span>
-  <div class="logo">CHOLA AI STUDIO</div>
-  <p class="tagline">உங்கள் கற்பனைக்கு AI தொழில்நுட்பம்!</p>
-  <p style="color:#c5a65c;font-size:12px">
-    ROYAL TAMIL AI CREATIVE STUDIO
-  </p>
+<div class="eyebrow">TAMIL • CREATIVITY • TECHNOLOGY</div>
+<div class="logo">CHOLA AI</div>
+<h1>சோழர் பெருமையுடன் புதிய படைப்புலகம்!</h1>
+<p>தமிழில் கற்பனை செய்யுங்கள். கதைகளை உருவாக்குங்கள். புதிய சிந்தனைகளைப் பகிருங்கள். உங்கள் படைப்புப் பயணம் இங்கே தொடங்குகிறது.</p>
+<a class="gold" href="#tools">படைப்பைத் தொடங்கு ↓</a>
 </header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#features">Features</a>
-  <a href="#video">AI Video</a>
-  <a href="#story">Story Maker</a>
-  <a href="#prompt">Prompt</a>
-  <a href="#about">About</a>
+<nav aria-label="முதன்மை வழிசெலுத்தல்">
+<a href="#home">முகப்பு</a>
+<a href="#tools">கருவிகள்</a>
+<a href="#video">AI வீடியோ</a>
+<a href="#story">கதை</a>
+<a href="#prompt">Prompt</a>
+<a href="#about">எங்களைப் பற்றி</a>
 </nav>
 
-<div class="hero">
-  <div class="hero-label">WELCOME TO THE ROYAL STUDIO</div>
-  <h1>CHOLA AI STUDIO</h1>
-  <p>
-    தமிழ் படைப்பாளர்களுக்கான புதிய டிஜிட்டல் உலகம்.
-    உங்கள் கற்பனையை கதைகளாகவும் AI Prompt-களாகவும் மாற்றுங்கள்!
-  </p>
-  <a class="gold-btn" href="#story">✨ Start Creating</a>
-</div>
-
 <main>
-
-<div id="features" class="section-title">
-  <h2>✦ Our Creative Tools ✦</h2>
-  <p>உங்கள் படைப்புகளுக்கான கருவிகள்</p>
+<section id="tools">
+<div class="section-head">
+<div class="kicker">DISCOVER • CREATE • SHARE</div>
+<h2>உங்கள் படைப்புக் கருவிகள்</h2>
+<p>கீழே ஸ்க்ரோல் செய்து ஒவ்வொரு பகுதியையும் பயன்படுத்துங்கள்.</p>
 </div>
-
-<div class="feature-grid">
-  <div class="feature">
-    <div class="icon">🎬</div>
-    <h3>AI Video</h3>
-    <p>வெளிப்புற AI Video கருவியைப் பயன்படுத்துங்கள்.</p>
-  </div>
-
-  <div class="feature">
-    <div class="icon">📖</div>
-    <h3>Tamil Story</h3>
-    <p>புதிய தமிழ் கதை யோசனைகளை உருவாக்குங்கள்.</p>
-  </div>
-
-  <div class="feature">
-    <div class="icon">✨</div>
-    <h3>AI Prompts</h3>
-    <p>படங்களுக்கான Creative Prompt உருவாக்குங்கள்.</p>
-  </div>
+<div class="grid">
+<article class="tile"><div class="ico">🎬</div><h3>AI வீடியோ</h3><p class="muted">வெளிப்புற வீடியோ கருவியைத் திறந்து முயற்சி செய்யுங்கள்.</p></article>
+<article class="tile"><div class="ico">📜</div><h3>தமிழ்க் கதை</h3><p class="muted">ஒரு தலைப்பிலிருந்து கதை யோசனையை உருவாக்குங்கள்.</p></article>
+<article class="tile"><div class="ico">✨</div><h3>படைப்பு Prompt</h3><p class="muted">உங்கள் கற்பனைக்கான விரிவான Prompt உருவாக்குங்கள்.</p></article>
 </div>
-
-<section id="video" class="card">
-  <div class="section-title">
-    <h2>🎬 AI Video Generator</h2>
-    <p>AI Video உருவாக்கும் கருவி</p>
-  </div>
-
-  <iframe
-    class="video-frame"
-    src="https://pyramid-flow-pyramid-flow.hf.space"
-    title="AI Video Generator"
-    loading="lazy"
-    allow="fullscreen">
-  </iframe>
-
-  <p style="font-size:13px;margin-top:12px">
-    இந்த Video கருவி வெளிப்புற Hugging Face சேவையைச் சார்ந்தது.
-    அது கிடைக்காவிட்டால் கீழே உள்ள இணைப்பைப் பயன்படுத்துங்கள்.
-  </p>
-
-  <a class="info-link"
-     href="https://huggingface.co/spaces/Pyramid-Flow/pyramid-flow"
-     target="_blank" rel="noopener">
-     Open AI Video Tool
-  </a>
 </section>
 
-<section id="story" class="card">
-  <h2>📖 CHOLA Tamil Story Maker</h2>
-  <p>உங்கள் கதை தலைப்பை உள்ளிடுங்கள்.</p>
-
-  <input id="storyTopic"
-         type="text"
-         placeholder="உதாரணம்: சோழ மன்னன்">
-
-  <button class="gold-btn" onclick="makeStory()">
-    ✨ கதை உருவாக்கு
-  </button>
-
-  <div id="storyResult" class="result">
-    உங்கள் கதை இங்கே வரும்.
-  </div>
-
-  <button class="gold-btn" onclick="copyResult('storyResult')">
-    📋 Copy Story
-  </button>
+<section id="video">
+<div class="section-head">
+<div class="kicker">VIDEO CREATION</div>
+<h2>🎬 AI வீடியோ கருவி</h2>
+<p>வீடியோ உருவாக்கும் வெளிப்புற சேவை</p>
+</div>
+<iframe class="video" src="https://pyramid-flow-pyramid-flow.hf.space" title="AI Video Generator" loading="lazy" allow="fullscreen"></iframe>
+<p class="notice">இந்தக் கருவி வெளிப்புற Hugging Face சேவையைச் சார்ந்தது. ஏற்றப்படாவிட்டால் நேரடியாகத் திறக்கவும்:
+<a href="https://huggingface.co/spaces/Pyramid-Flow/pyramid-flow" target="_blank" rel="noopener">AI Video Tool</a>.
+</p>
 </section>
 
-<section id="prompt" class="card">
-  <h2>✨ AI Prompt Generator</h2>
-  <p>உங்கள் படத்திற்கான யோசனையை உள்ளிடுங்கள்.</p>
-
-  <input id="promptTopic"
-         type="text"
-         placeholder="உதாரணம்: Ancient Tamil Kingdom">
-
-  <button class="gold-btn" onclick="makePrompt()">
-    Create Prompt
-  </button>
-
-  <div id="promptResult" class="result">
-    உங்கள் Prompt இங்கே வரும்.
-  </div>
-
-  <button class="gold-btn" onclick="copyResult('promptResult')">
-    📋 Copy Prompt
-  </button>
+<section id="story">
+<div class="section-head">
+<div class="kicker">TAMIL STORY LAB</div>
+<h2>📜 தமிழ் கதை யோசனை</h2>
+<p>உங்கள் தலைப்பைத் தாருங்கள்; ஒரு தொடக்கக் கதை வடிவம் கிடைக்கும்.</p>
+</div>
+<label for="storyTopic">கதைத் தலைப்பு</label>
+<input id="storyTopic" placeholder="உதாரணம்: தஞ்சை கோட்டையின் மர்மம்">
+<button onclick="makeStory()">கதை உருவாக்கு</button>
+<div id="storyResult" class="output" aria-live="polite">உங்கள் கதை இங்கே தோன்றும்.</div>
+<button onclick="copyText('storyResult')">காப்பி செய்</button>
 </section>
 
-<section id="about" class="card">
-  <h2>🏛 About CHOLA AI STUDIO</h2>
-  <p>
-    CHOLA AI STUDIO என்பது தமிழ் படைப்பாளர்களுக்கான
-    டிஜிட்டல் Creative Studio ஆகும்.
-  </p>
-  <p>
-    தமிழ் கதை யோசனைகள், AI Prompt உருவாக்கம் மற்றும்
-    வெளிப்புற AI Video கருவிகளை ஒரே இடத்தில் வழங்குவதே
-    எங்கள் நோக்கம்.
-  </p>
+<section id="prompt">
+<div class="section-head">
+<div class="kicker">PROMPT STUDIO</div>
+<h2>✨ Creative Prompt Generator</h2>
+<p>படம் அல்லது காட்சிக்கான யோசனையை உள்ளிடுங்கள்.</p>
+</div>
+<label for="promptTopic">உங்கள் யோசனை</label>
+<textarea id="promptTopic" placeholder="உதாரணம்: மழைக்கால தஞ்சை பெரிய கோவில்"></textarea>
+<button onclick="makePrompt()">Prompt உருவாக்கு</button>
+<div id="promptResult" class="output" aria-live="polite">உங்கள் Prompt இங்கே தோன்றும்.</div>
+<button onclick="copyText('promptResult')">காப்பி செய்</button>
+<p class="notice">குறிப்பு: இவை Browser-ல் இயங்கும் அடிப்படை உதவிக் கருவிகள்; உண்மையான AI பதில்களுக்கு பாதுகாப்பான Backend இணைப்பு தேவை.</p>
 </section>
 
-<section id="privacy" class="card">
-  <h2>🔒 Privacy Policy</h2>
-  <p>
-    Story மற்றும் Prompt கருவிகள் உங்கள் Browser-ல் இயங்குகின்றன.
-    இந்தக் கருவிகள் உள்ளிடும் தகவல்களை எங்கள் Server-க்கு
-    அனுப்புவதில்லை.
-  </p>
-  <p>
-    வெளிப்புற AI சேவைகளைப் பயன்படுத்தும்போது அவற்றின்
-    தனியுரிமைக் கொள்கைகள் பொருந்தும்.
-  </p>
+<section id="about">
+<div class="section-head">
+<div class="kicker">OUR VISION</div>
+<h2>🏛 CHOLA AI STUDIO</h2>
+</div>
+<p>தமிழ் மொழி, கற்பனை, தொழில்நுட்பம் ஆகியவற்றை ஒரே இடத்தில் இணைக்கும் படைப்புத் தளமாக CHOLA AI STUDIO உருவாக்கப்பட்டுள்ளது. கதை யோசனைகள், Prompt உருவாக்கம் மற்றும் வெளிப்புற வீடியோ கருவிகளை ஒரே இடத்தில் அணுக உதவுவதே எங்கள் நோக்கம்.</p>
 </section>
 
-<section id="contact" class="card">
-  <h2>📩 Contact</h2>
-  <p>
-    இணையதளம் தொடர்பான கருத்துகள் மற்றும் பிழைகளை
-    எங்கள் GitHub Repository-ல் தெரிவிக்கலாம்.
-  </p>
-  <a class="info-link"
-     href="https://github.com/gokulprasath1004/chola-ai-studio"
-     target="_blank" rel="noopener">
-    Visit GitHub Repository
-  </a>
+<section id="privacy">
+<div class="section-head">
+<div class="kicker">YOUR PRIVACY</div>
+<h2>🔒 தனியுரிமை</h2>
+</div>
+<p>இந்தப் பக்கத்தின் கதை மற்றும் Prompt கருவிகள் உங்கள் உலாவியிலேயே இயங்குகின்றன. அவை உள்ளிடும் உரையை எங்கள் சேவையகத்திற்கு அனுப்புவதில்லை. வெளிப்புற சேவைகளைத் திறந்தால் அவற்றின் தனியுரிமை விதிமுறைகள் பொருந்தும்.</p>
 </section>
 
+<section id="contact">
+<div class="section-head">
+<div class="kicker">GET IN TOUCH</div>
+<h2>📩 தொடர்புக்கு</h2>
+</div>
+<p>கருத்துகள் அல்லது பிழைகளை GitHub Repository-ல் தெரிவிக்கலாம்.</p>
+<p style="margin-top:12px">
+<a class="gold" href="https://github.com/gokulprasath1004/chola-ai-studio" target="_blank" rel="noopener">GitHub Repository திறக்க</a>
+</p>
+</section>
 </main>
 
 <footer>
-  <div class="logo">⚔ CHOLA AI STUDIO</div>
-  <p>தமிழ் படைப்பாளர்களுக்கான டிஜிட்டல் உலகம்</p>
-  <p>© 2026 CHOLA AI STUDIO</p>
-
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#privacy">Privacy</a>
-  <a href="#contact">Contact</a>
-
-  <p style="font-size:12px;margin-top:15px">
-    CREATE • IMAGINE • EXPLORE
-  </p>
+<strong>⚜ CHOLA AI STUDIO</strong>
+<p>தமிழின் பெருமை • கற்பனையின் புதிய எல்லை</p>
+<p>© 2026 CHOLA AI STUDIO</p>
+<p><a href="#privacy">தனியுரிமை</a> · <a href="#home">மேலே செல்ல</a></p>
 </footer>
 
 <script>
-function makeStory() {
-  const topic = document.getElementById("storyTopic").value.trim();
-
-  if (!topic) {
-    alert("கதை தலைப்பை உள்ளிடுங்கள்");
-    return;
-  }
-
-  const openings = [
-    "ஒரு காலத்தில் ஒரு மர்மமான நாட்டில்",
-    "பல ஆண்டுகளுக்கு முன்பு ஒரு அழகான கிராமத்தில்",
-    "ஒரு நாள் எதிர்பாராத விதமாக"
-  ];
-
-  const events = [
-    "ஒரு பழமையான ரகசியம் கண்டுபிடிக்கப்பட்டது.",
-    "ஒரு புதிய சவால் உருவானது.",
-    "யாருக்கும் தெரியாத ஒரு உண்மை வெளிவந்தது."
-  ];
-
-  const endings = [
-    "இறுதியில் அனைவரும் மகிழ்ச்சியடைந்தனர்.",
-    "அந்த அனுபவம் அனைவருக்கும் ஒரு பாடமாக அமைந்தது.",
-    "அந்த நாள் வரலாற்றில் மறக்க முடியாத நாளானது."
-  ];
-
-  const pick = a => a[Math.floor(Math.random() * a.length)];
-
-  const story =
-    "தலைப்பு: " + topic + "\n\n" +
-    pick(openings) + " " + topic + " பற்றிய கதை தொடங்கியது.\n\n" +
-    pick(events) + " கதையின் நாயகன் பல சவால்களை எதிர்கொண்டான்.\n\n" +
-    pick(endings);
-
-  document.getElementById("storyResult").textContent = story;
+function makeStory(){
+const t=document.getElementById('storyTopic').value.trim();
+if(!t){alert('கதைத் தலைப்பை உள்ளிடுங்கள்');return;}
+const starts=['ஒரு காலத்தில் சோழ நாட்டின் அழகிய மண்ணில்','காவிரியின் கரையோரம் அமைந்த பழமையான ஊரில்','தஞ்சையின் பொற்கால நினைவுகள் நிறைந்த ஒரு நாளில்'];
+const middles=['எதிர்பாராத ஒரு செய்தி அந்த ஊரில் பரவியது.','பல ஆண்டுகளாக மறைந்திருந்த ஒரு ரகசியம் வெளிப்பட்டது.','அந்தச் சூழல் அனைவரையும் ஒன்றிணைந்து சிந்திக்க வைத்தது.'];
+const ends=['அந்த அனுபவம் துணிவும் ஒற்றுமையும் எவ்வளவு முக்கியம் என்பதை உணர்த்தியது.','அன்றைய நாள் புதிய நம்பிக்கையுடன் முடிந்தது.','அந்த நிகழ்வு ஊரின் நினைவில் நீண்ட காலம் நிலைத்தது.'];
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+document.getElementById('storyResult').textContent='தலைப்பு: '+t+'\n\n'+pick(starts)+' '+t+' பற்றிய நிகழ்வு தொடங்கியது.\n\n'+pick(middles)+'\n\n'+pick(ends);
 }
 
-function makePrompt() {
-  const topic = document.getElementById("promptTopic").value.trim();
-
-  if (!topic) {
-    alert("முதலில் ஒரு யோசனையை உள்ளிடுங்கள்");
-    return;
-  }
-
-  const prompt =
-    "Create a cinematic, highly detailed scene about " + topic +
-    ". Ancient Tamil inspired atmosphere, royal architecture, " +
-    "beautiful golden lighting, realistic textures, " +
-    "professional composition, high quality digital art.";
-
-  document.getElementById("promptResult").textContent = prompt;
+function makePrompt(){
+const t=document.getElementById('promptTopic').value.trim();
+if(!t){alert('முதலில் ஒரு யோசனையை உள்ளிடுங்கள்');return;}
+document.getElementById('promptResult').textContent='Create a cinematic, richly detailed scene of '+t+'. Inspired by Tamil heritage and Chola-era architecture, authentic stone carvings, dramatic golden-hour lighting, realistic textures, balanced composition, atmospheric depth, highly detailed environment. No text, no watermark.';
 }
 
-async function copyResult(id) {
-  const text = document.getElementById(id).textContent.trim();
-
-  if (!text) {
-    alert("Copy செய்ய உரை இல்லை");
-    return;
-  }
-
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("வெற்றிகரமாக Copy செய்யப்பட்டது!");
-  } catch (error) {
-    alert("Copy செய்ய முடியவில்லை. உரையைத் தேர்ந்தெடுத்து Copy செய்யுங்கள்.");
-  }
+async function copyText(id){
+const el=document.getElementById(id),v=el.textContent.trim();
+try{await navigator.clipboard.writeText(v);alert('காப்பி செய்யப்பட்டது!');}
+catch(e){alert('உரையைத் தேர்ந்தெடுத்து Copy செய்யுங்கள்.');}
 }
 </script>
-
 </body>
 </html>
