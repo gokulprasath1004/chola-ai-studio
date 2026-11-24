@@ -4,38 +4,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHOLA AI STUDIO</title>
+<meta name="description" content="CHOLA AI STUDIO - Tamil AI Video, Story and Image Prompt Creation Studio.">
+<meta name="theme-color" content="#07111f">
+<title>CHOLA AI STUDIO | Tamil AI Creator</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#07111f;color:white;font-family:Arial,sans-serif}
-header{text-align:center;padding:22px;background:#101e32;border-bottom:2px solid #d6a947}
-h1{color:#e9bd58;margin:0}
-main{max-width:850px;margin:25px auto;padding:15px}
-.card{background:#12243b;padding:18px;border-radius:15px;border:1px solid #344760}
-h2{color:#e9bd58}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#07111f;color:white;
+ font-family:Arial,sans-serif;line-height:1.7
+}
+header{
+ text-align:center;padding:30px 15px;
+ background:linear-gradient(135deg,#101e32,#26334a);
+ border-bottom:2px solid #d6a947
+}
+h1{color:#e9bd58;font-size:30px;margin:0}
+header p{color:#d1dbea}
+nav{
+ display:flex;justify-content:center;flex-wrap:wrap;
+ gap:10px;padding:14px;background:#0d192a;
+ position:sticky;top:0;z-index:5
+}
+nav a{
+ color:#e9bd58;text-decoration:none;
+ padding:7px 12px;border:1px solid #35465c;
+ border-radius:8px;font-size:14px
+}
+main{max-width:950px;margin:auto;padding:18px}
+section{
+ background:#12243b;padding:22px;margin:20px 0;
+ border-radius:15px;border:1px solid #344760
+}
+h2{color:#e9bd58;margin-top:0}
+h3{color:#f0cc79}
 p{color:#c5d1df}
-iframe{width:100%;height:750px;border:0;border-radius:12px;background:#081525}
-a{color:#e9bd58}
+input,textarea{
+ width:100%;padding:13px;margin:8px 0;
+ background:#081525;color:white;
+ border:1px solid #52647c;border-radius:8px;
+ font-size:15px
+}
+textarea{min-height:110px;resize:vertical}
+button{
+ background:#d6a947;color:#101827;
+ padding:12px 18px;border:0;
+ border-radius:8px;font-weight:bold;
+ cursor:pointer;margin:5px 0
+}
+button:hover{background:#f0cc79}
+.result{
+ background:#081525;padding:15px;
+ border-radius:9px;white-space:pre-wrap;
+ overflow-wrap:anywhere;margin-top:12px
+}
+iframe{
+ width:100%;height:650px;border:0;
+ border-radius:12px;background:#081525
+}
+footer{
+ text-align:center;padding:25px;
+ background:#101e32;color:#c5d1df
+}
+footer a{color:#e9bd58;margin:8px}
+.small{font-size:13px;color:#aab8c9}
 </style>
 </head>
+
 <body>
+
 <header>
 <h1>⚔ CHOLA AI STUDIO</h1>
-<p>தமிழ் AI வீடியோ உருவாக்கும் தளம்</p>
+<p>உங்கள் கற்பனைக்கு AI தொழில்நுட்பம்!</p>
+<p>AI Video | Story | Image Prompts</p>
 </header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#video">AI Video</a>
+<a href="#story">Story Maker</a>
+<a href="#prompt">Prompt Maker</a>
+<a href="#about">About</a>
+<a href="#privacy">Privacy</a>
+</nav>
+
 <main>
-<div class="card">
-<h2>AI Text To Video Generator</h2>
-<p>உங்கள் கதையை உள்ளிடி AI வீடியோ உருவாக்குங்கள்.</p>
+
+<section id="home">
+<h2>Welcome to CHOLA AI STUDIO</h2>
+<p>
+CHOLA AI STUDIO என்பது AI தொழில்நுட்பத்தை
+எளிமையாகப் பயன்படுத்த உதவும் ஒரு தமிழ் Creator Studio.
+உங்கள் கதைகள், கற்பனைகள் மற்றும் வீடியோ யோசனைகளை
+உருவாக்குவதற்கான கருவிகளை இங்கே பயன்படுத்தலாம்.
+</p>
+<h3>எங்கள் இலவச கருவிகள்</h3>
+<p>✓ AI Video Generator</p>
+<p>✓ Tamil Story Ideas</p>
+<p>✓ AI Prompt Generator</p>
+<p>✓ Creative Image Prompts</p>
+</section>
+
+<section id="video">
+<h2>🎬 AI Text To Video Generator</h2>
+<p>உங்கள் வீடியோ யோசனையை AI கருவியில் முயற்சி செய்யுங்கள்.</p>
+
 <iframe
 src="https://pyramid-flow-pyramid-flow.hf.space"
-title="Pyramid Flow AI Video Generator"
-allow="fullscreen"
-></iframe>
-<p>கருவி திறக்கவில்லை என்றால்
-<a href="https://huggingface.co/spaces/Pyramid-Flow/pyramid-flow" target="_blank">இங்கே திறக்கவும்</a>.
+title="AI Video Generator"
+loading="lazy"
+allow="fullscreen">
+</iframe>
+
+<p class="small">
+இந்த AI கருவி வெளிப்புற சேவையால் வழங்கப்படுகிறது.
+அதன் செயல்பாடு மற்றும் பயன்பாட்டு வரம்புகள்
+அந்த சேவையைப் பொறுத்தது.
 </p>
+
+<a href="https://huggingface.co/spaces/Pyramid-Flow/pyramid-flow"
+target="_blank" rel="noopener">
+AI கருவியைத் தனியாகத் திறக்கவும்
+</a>
+</section>
+
+<section id="story">
+<h2>📖 Tamil Story Idea Generator</h2>
+<p>ஒரு தலைப்பைக் கொடுத்து கதை யோசனையை உருவாக்குங்கள்.</p>
+
+<input id="storyTopic" placeholder="உதாரணம்: சோழ மன்னன்">
+
+<button onclick="makeStory()">கதை யோசனை உருவாக்கு</button>
+<div id="storyResult" class="result">
+உங்கள் கதை இங்கே வரும்.
 </div>
+<button onclick="copyResult('storyResult')">Copy Story</button>
+</section>
+
+<section id="prompt">
+<h2>✨ AI Prompt Generator</h2>
+<p>உங்கள் கற்பனைக்கான Prompt உருவாக்குங்கள்.</p>
+
+<input id="promptTopic"
+placeholder="உதாரணம்: Ancient Tamil Kingdom">
+
+<button onclick="makePrompt()">Create Prompt</button>
+
+<div id="promptResult" class="result">
+உங்கள் Prompt இங்கே வரும்.
+</div>
+
+<button onclick="copyResult('promptResult')">Copy Prompt</button>
+</section>
+
+<section id="about">
+<h2>About CHOLA AI STUDIO</h2>
+<p>
+CHOLA AI STUDIO ஒரு தமிழ் AI Creator Project.
+AI Video மற்றும் Creative Prompt உருவாக்கும்
+கருவிகளைப் பயனர்கள் எளிமையாகப் பயன்படுத்த
+உதவுவதே எங்கள் நோக்கம்.
+</p>
+</section>
+
+<section id="privacy">
+<h2>Privacy Policy</h2>
+<p>
+இந்த Website-ல் பயனர்கள் உள்ளிடும் தகவல்களை
+நாங்கள் தனியாகச் சேமிப்பதில்லை.
+ஆனால் வெளிப்புற AI சேவைகள் தங்களுடைய
+தனியுரிமைக் கொள்கைகளின்படி தகவல்களைச்
+செயலாக்கலாம்.
+</p>
+<p>
+வெளிப்புற சேவைகளைப் பயன்படுத்துவதற்கு முன்பு
+அவற்றின் Privacy Policy-ஐப் படிக்கவும்.
+</p>
+<p>
+இந்த Website-ல் எதிர்காலத்தில் விளம்பரச் சேவைகள்
+இணைக்கப்படலாம். அப்போது அதற்கான தகவல்கள்
+இங்கே புதுப்பிக்கப்படும்.
+</p>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Website தொடர்பான கருத்துகள் மற்றும் பிழைகளை
+எங்கள் GitHub Repository-ல் தெரிவிக்கலாம்.</p>
+<a href="https://github.com/gokulprasath1004/chola-ai-studio"
+target="_blank" rel="noopener">GitHub Repository</a>
+</section>
+
 </main>
+
+<footer>
+<p>© 2026 CHOLA AI STUDIO</p>
+<p>Built for Tamil Creators</p>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#privacy">Privacy</a>
+<a href="#contact">Contact</a>
+</footer>
+
+<script>
+function makeStory(){
+ const topic=document.getElementById("storyTopic").value.trim();
+ if(!topic){
+  alert("முதலில் தலைப்பை உள்ளிடுங்கள்");
+  return;
+ }
+ document.getElementById("storyResult").textContent=
+ "தலைப்பு: "+topic+"\n\n"+
+ topic+" என்ற தலைப்பில் ஒரு புதிய கதை உருவாகிறது. "+
+ "அதன் பின்னணியில் ஒரு மர்மமான சம்பவம் நிகழ்கிறது. "+
+ "அந்தச் சம்பவத்தை ஆராயும் கதாநாயகன் பல சவால்களைச் சந்தித்து "+
+ "இறுதியில் உண்மையைக் கண்டுபிடிக்கிறான்.\n\n"+
+ "குறிப்பு: இது ஒரு அடிப்படை கதை யோசனை மட்டுமே.";
+}
+
+function makePrompt(){
+ const topic=document.getElementById("promptTopic").value.trim();
+ if(!topic){
+  alert("முதலில் ஒரு யோசனையை உள்ளிடுங்கள்");
+  return;
+ }
+ document.getElementById("promptResult").textContent=
+ "Create a cinematic, highly detailed scene about "+topic+
+ ", realistic lighting, beautiful composition, rich environment, "+
+ "professional film quality, 4K visual style.";
+}
+
+function copyResult(id){
+ const text=document.getElementById(id).textContent;
+ if(navigator.clipboard && window.isSecureContext){
+  navigator.clipboard.writeText(text)
+  .then(()=>alert("Copied!"))
+  .catch(()=>alert("Copy செய்ய முடியவில்லை"));
+ }else{
+  alert("Text-ஐ தேர்ந்தெடுத்து Copy செய்யுங்கள்");
+ }
+}
+</script>
+
 </body>
 </html>
